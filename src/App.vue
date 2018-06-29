@@ -55,4 +55,9 @@ export default {
 @import "~vux/src/styles/1px.less";
 @import "~vux/src/styles/tap.less";
 // @import './assets/style/common.less';
+#app, body, html {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
 </style>
