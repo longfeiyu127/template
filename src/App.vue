@@ -3,6 +3,7 @@
     <div v-transfer-dom>
       <loading v-model="isLoading" text="正在加载"></loading>
     </div>
+
     <transition
     @after-enter="$vux.bus && $vux.bus.$emit('vux:after-view-enter')"
     :name="viewTransition" :css="!!direction">
@@ -10,6 +11,7 @@
         <router-view class="router-view"></router-view>
       </keep-alive>
     </transition>
+
   </div>
 </template>
 
@@ -54,10 +56,11 @@ export default {
 @import "~vux/src/styles/reset.less";
 @import "~vux/src/styles/1px.less";
 @import "~vux/src/styles/tap.less";
-// @import './assets/style/common.less';
+@import './assets/style/common.less';
 #app, body, html {
   height: 100%;
   width: 100%;
+  overflow-x: hidden;
   position: relative;
 }
 </style>

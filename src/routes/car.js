@@ -1,5 +1,5 @@
 export default [{
-  name: 'index',
-  path: '/',
+  name: 'car',
+  path: '/car',
   component: resolve => require(['@/components/HelloWorld'], resolve)
 }]

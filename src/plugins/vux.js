@@ -3,14 +3,19 @@ import router from '@/plugins/router'
 // import inject from '@/plugins/inject'
 import store from '@/plugins/store'
 import { sync } from 'vuex-router-sync'
-import { ConfigPlugin, AlertPlugin, ToastPlugin, LoadingPlugin } from 'vux'
+import { ConfigPlugin, AlertPlugin, ToastPlugin, LoadingPlugin, ViewBox } from 'vux'
+import Vue from 'vue'
 
+Vue.component('view-box', ViewBox)
 export function VuxPlugin (Vue) {
   console.log(123)
-  // 注册全局组件
+  // 注册全局插件
   Vue.use(AlertPlugin)
   Vue.use(LoadingPlugin)
+  Vue.use(ViewBox)
   Vue.use(ToastPlugin, {position: 'bottom'})
+  // 注册全局组件
+  Vue.component('view-box', ViewBox)
 
   // 配置vux页面切换动画
   store.registerModule('vux', {

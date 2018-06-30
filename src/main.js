@@ -7,13 +7,10 @@ import router from '@/plugins/router'
 import inject from '@/plugins/inject'
 import store from '@/plugins/store'
 import { VuxPlugin } from '@/plugins/vux'
-// 引入UI库/样式
-// 解决一些问题
-require('es6-promise').polyfill()
 
-Vue.config.productionTip = false
-
+// 依赖注入
 Vue.use(inject)
+// 引入UI库/样式
 Vue.use(VuxPlugin)
 /* eslint-disable no-new */
 new Vue({

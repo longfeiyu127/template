@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="54px" height="54px" viewBox="0 0 54 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>14-img@svg</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="14-img" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-2">
+            <rect id="Rectangle-Copy" x="0" y="0" width="54" height="54"></rect>
+            <g id="Group-8" transform="translate(6.000000, 8.000000)">
+                <circle id="Oval" fill="#FFFFFF" cx="21" cy="17" r="3"></circle>
+                <circle id="Oval-Copy" fill="#FFFFFF" cx="9" cy="17" r="3"></circle>
+                <circle id="Oval-Copy-2" fill="#FFFFFF" cx="33" cy="17" r="3"></circle>
+                <path d="M1.54765018e-14,4 L1.21236354e-13,35.5024625 C1.17258127e-13,36.5292771 0.832397718,37.3616748 1.85921234,37.3616748 C2.31777869,37.3616748 2.76016846,37.1922056 3.10137052,36.8858328 L8.14388054,32.358054 C8.87795928,31.6989088 9.82973819,31.3343044 10.8163202,31.3343044 L38,31.3343044 C40.209139,31.3343044 42,29.5434434 42,27.3343044 L42,4 C42,1.790861 40.209139,-1.99641634e-15 38,-3.55271368e-15 L4,-1.50990331e-14 C1.790861,-1.46932209e-14 -2.705415e-16,1.790861 0,4 Z" id="Path-59" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -45,8 +45,8 @@ export default class SourceMaker {
     	mockpath = ''
     }) {
     	const  {name, desc, params, method, path, localPath } = config
-		let apiname = `${namespace}${sep}${name}`,
-            url = mock ? localPath : path,
+		let apiname = `${namespace}${sep}${name}`
+        let url = mock ? localPath : path,
             baseURL = mock && mockpath,
 
         debug && assert(name, `${apiUrl} :接口name属性不能为空`)

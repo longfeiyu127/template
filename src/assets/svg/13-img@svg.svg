@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="54px" height="54px" viewBox="0 0 54 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>13-img@svg</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="13-img" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-11">
+            <rect id="Rectangle" x="0" y="0" width="54" height="54"></rect>
+            <g id="Group-3" transform="translate(4.000000, 4.000000)" stroke="#FFFFFF" stroke-width="3">
+                <path d="M40,27 C43.3137085,27 46,24.3137085 46,21 C46,17.6862915 43.3137085,15 40,15 C40,18.3123343 40.0134979,22.6550422 40,27 Z" id="Oval-2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M0,27 C3.3137085,27 6,24.3137085 6,21 C6,17.6862915 3.3137085,15 0,15 C0,18.3123343 0.0134979224,22.6550422 0,27 Z" id="Oval-2" stroke-linecap="round" stroke-linejoin="round" transform="translate(3.000000, 21.000000) rotate(180.000000) translate(-3.000000, -21.000000) "></path>
+                <path d="M6.08028055,26.9194448 C6.08028055,21.2427434 6.08028055,17.1671987 6.08028055,14.6928107 C6.08028055,10.9812287 11.5315255,0.476032128 22.547886,0.476032128 C33.5642466,0.476032128 39.7027286,10.1705899 39.7027286,14.1038937 C39.7027286,18.0371974 39.7027286,24.9538904 39.7027286,28.7385429 C39.7027286,32.5231955 37.8101189,44.4660997 25.8756445,44.4660997" id="Path-58" stroke-linecap="round" stroke-linejoin="round"></path>
+                <rect id="Rectangle-2" x="18.5" y="40.5" width="9" height="4" rx="2"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

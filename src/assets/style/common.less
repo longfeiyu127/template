@@ -1,0 +1,146 @@
+// @import './theme.less';
+body {
+  background-color: #f2f2f2;
+  color: #6f6f6f;
+	font-size: 13px;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+	overflow: hidden;
+}
+::-webkit-input-placeholder{
+	color: #999;
+}
+
+input[type="search"]::-webkit-search-cancel-button{
+    display: none;
+}
+.mt10{
+	margin-top: 10px;
+}
+.mt15{
+	margin-top: 15px;
+}
+.g-mask{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1001;
+	background-color: #fff;
+	transition: all 1s;
+	opacity: 1;		
+}
+.g-mask.fadeout{
+	opacity: 0;
+}
+.g-mask.hide{
+	display: none;
+}
+.weui-loading_toast .weui-toast{
+	width: 100px;
+	height: 100px;
+}
+.weui-icon_toast.weui-loading{
+	margin-top: 20px;
+}
+#app{
+	width: 100%;
+	height: 100%;
+}
+.router-view {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	box-sizing: border-box;	
+}
+.wrapper-content{
+	background-color: #fff;
+	padding: 15px;
+}
+.wrapper{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.weui-tab__panel.vux-fix-safari-overflow-scrolling{
+	padding-bottom: 0;
+}
+.vux-pop-out-enter-active,
+.vux-pop-out-leave-active,
+.vux-pop-in-enter-active,
+.vux-pop-in-leave-active {
+  will-change: transform;
+  transition: all 500ms;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  perspective: 1000;
+}
+.vux-pop-out-enter {
+  opacity: 0;
+  transform: translate3d(-100%, 0, 0);
+}
+.vux-pop-out-leave-active {
+  opacity: 0;
+  transform: translate3d(100%, 0, 0);
+}
+.vux-pop-in-enter {
+  opacity: 0;
+  transform: translate3d(100%, 0, 0);
+}
+.vux-pop-in-leave-active {
+  opacity: 0;
+  transform: translate3d(-100%, 0, 0);
+}
+
+.white-space{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.img-center{
+	display: block;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	min-height: 100%;
+	z-index: 1;
+}
+.g-solid-btn, .g-empty-btn{
+	display: block;
+	margin-left: auto;
+	margin-right: auto; 
+	width: 100%;
+	height: 42px;
+	border: 1px solid #0a8bdc;
+	line-height: 40px;
+	text-align: center;
+	font-size: 21px;
+	user-select: none;
+}
+.g-solid-btn{
+	background-color: #0a8bdc;
+	color: #fff;
+}
+.g-empty-btn{
+	color: @theme-color;
+}
+.g-empty-btn:active{
+	// background-color: @btn-empty-active;
+}
+.g-solid-btn:active{
+	// background-color: @btn-solid-active;
+}
+/*reset vux*/
+.weui-dialog .weui-dialog__btn_primary, .dp-container .dp-header .dp-item.dp-right{
+	// color: @theme-color;
+}
+

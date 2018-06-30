@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="68px" height="68px" viewBox="0 0 68 68" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>2-我的理赔@svg</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="2-我的理赔" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-5">
+            <rect id="Rectangle-54-Copy" stroke="#979797" opacity="0" x="0.5" y="0.5" width="67" height="67"></rect>
+            <rect id="Rectangle-52" fill="#FFFFFF" x="20" y="25" width="29" height="4" rx="2"></rect>
+            <rect id="Rectangle-52-Copy" fill="#FFFFFF" x="20" y="36" width="29" height="4" rx="2"></rect>
+            <rect id="Rectangle-52-Copy-2" fill="#FFFFFF" x="20" y="47" width="16" height="4" rx="2"></rect>
+        </g>
+        <g id="Group-8-Copy" transform="translate(9.000000, 6.000000)">
+            <g id="Group-15">
+                <path d="M23.7243764,1.04831989 C18.0213239,7.64998641 10.1654551,10.9508197 0.156770017,10.9508197 C-1.22816016,32.5244086 6.56292258,47.4987717 23.5300182,55.8739092 L23.530026,55.8738935 C24.1813657,56.1954017 24.9558173,56.1384904 25.5531612,55.7252214 C43.490066,43.3156772 51.5565979,28.6296861 49.7527569,11.667248 C37.9102607,11.2151411 29.7622301,7.70628315 25.3086651,1.14067417 L25.3086471,1.14068636 C24.9986248,0.68364004 24.3767927,0.56445356 23.9197464,0.874475905 C23.8472938,0.923621724 23.781609,0.982069413 23.7243764,1.04831989 Z" id="Path-63" fill="#FD8181"></path>
+                <rect id="Rectangle-4" fill="#FFFFFF" transform="translate(17.015995, 30.416185) rotate(45.000000) translate(-17.015995, -30.416185) " x="9.80045432" y="28.6209718" width="14.4310823" height="3.59042553" rx="1.79521277"></rect>
+                <rect id="Rectangle-4-Copy" fill="#FFFFFF" transform="translate(28.412978, 27.396672) rotate(-45.000000) translate(-28.412978, -27.396672) " x="16.9847052" y="25.6014589" width="22.8565455" height="3.59042553" rx="1.79521277"></rect>
+            </g>
+            <g id="Group-7" transform="translate(10.638298, 18.021277)"></g>
+        </g>
+    </g>
+</svg>

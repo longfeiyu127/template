@@ -9,8 +9,11 @@ export default {
     // Vue.prototype.$ajax = axios
     // Vue.prototype.$const = consts
     // 挂载全局变量
-    const GLOBAL = {}
     window.GLOBAL = {}
-    GLOBAL.ajax = axios
+    window.GLOBAL.ajax = axios
+    // 处理一些问题
+    Vue.config.productionTip = false
+    require('@/utils/rem.js')
+    require('es6-promise').polyfill()
   }
 }

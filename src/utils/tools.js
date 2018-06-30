@@ -1,9 +1,9 @@
 export function getNumb () {
-  var num = new Array()
-  for (var i = 0; i < 10; i++) {
-    var val = Math.ceil(Math.random() * 30)
-    var isEqu = false
-    for (var idx in num) {
+  let num = new Array()
+  for (let i = 0; i < 10; i++) {
+    let val = Math.ceil(Math.random() * 30)
+    let isEqu = false
+    for (let idx in num) {
       if (num[idx] === val) {
         isEqu = true
         break

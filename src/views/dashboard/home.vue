@@ -1,8 +1,8 @@
 <template >
-  <div>
-    home
-    <Tabs></Tabs>
-  </div>
+  <view-box id="home">
+    首页
+    <div class="goto" @click="$router.push('/HelloWorld')">去世界</div>
+  </view-box>
 </template>
 <script>
 // import { mapGetters } from 'vuex'
@@ -23,3 +23,9 @@ export default {
   }
 }
 </script>
+<style lang="less" scoped>
+#home {
+  background: red;
+  padding-bottom: 50px;
+}
+</style>
