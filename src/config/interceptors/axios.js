@@ -1,54 +1,76 @@
-import { CONSOLE_REQUEST_ENABLE } from '../index.js'
-// import { CONSOLE_REQUEST_ENABLE, CONSOLE_RESPONSE_ENABLE } from '../index.js'
-
-export function requestSuccessFunc (requestObj) {
-  CONSOLE_REQUEST_ENABLE && console.info('requestInterceptorFunc', `url: ${requestObj.url}`, requestObj)
-  // 自定义请求拦截逻辑，可以处理权限，请求发送监控等
-  // ...
-
-  return requestObj
+import axios from 'axios'
+function AxiosInit () {
+  // 全局loding
+  axios.interceptors.request.use((config) => {
+    // loading.start()
+    return config
+  }, (error) => {
+    // loading.end()
+    return Promise.reject(error)
+  })
+  // 响应拦截器
+  axios.interceptors.response.use((response) => {
+    if (response.data.resCode === 401) {
+      window.vm.storage.setSessionStorage('Authorization', '')
+      window.vm.storage.setCookie('userName', '')
+      window.vm.storage.setCookie('userData', '')
+      // if (!window.vm.AthenaJs.isAthena()) {
+      if (!window.vm.AthenaJs) {
+        window.GLOBAL.vm.router.replace({
+          path: '/login',
+          query: {
+            redirect: window.vm.$route.fullPath
+          }
+        })
+      } else {
+        // AthenaJs.login('true')
+      }
+    }
+    // loading.end()
+    return response
+  }, (err) => {
+    // loading.end()
+    if (err && err.response) {
+      switch (err.response.status) {
+        case 400:
+          err.message = '请求错误'
+          break
+        case 401:
+          err.message = '未授权，请登录'
+          break
+        case 403:
+          err.message = '拒绝访问'
+          break
+        case 404:
+          err.message = `请求地址出错: ${err.response.config.url}`
+          break
+        case 408:
+          err.message = '请求超时'
+          break
+        case 500:
+          err.message = '服务器内部错误'
+          break
+        case 501:
+          err.message = '服务未实现'
+          break
+        case 502:
+          err.message = '网关错误'
+          break
+        case 503:
+          err.message = '服务不可用'
+          break
+        case 504:
+          err.message = '网关超时'
+          break
+        case 505:
+          err.message = 'HTTP版本不受支持'
+          break
+        default:
+      }
+    }
+    // loading.timeout(err.message)
+    return Promise.reject(err)
+  })
 }
 
-export function requestFailFunc (requestError) {
-  // 自定义发送请求失败逻辑，断网，请求发送监控等
-  // ...
-
-  return Promise.reject(requestError)
-}
-
-export function responseSuccessFunc (responseObj) {
-  // 自定义响应成功逻辑，全局拦截接口，根据不同业务做不同处理，响应成功监控等
-  // ...
-  // 假设我们请求体为
-  // {
-  //     code: 1010,
-  //     msg: 'this is a msg',
-  //     data: null
-  // }
-
-  let resData = responseObj.data
-  let { code } = resData
-
-  switch (code) {
-    case 0: // 如果业务成功，直接进成功回调
-      return resData.data
-    case 1111:
-      // 如果业务失败，根据不同 code 做不同处理
-      // 比如最常见的授权过期跳登录
-      // 特定弹窗
-      // 跳转特定页面等
-
-      location.href = '' // 这里的路径也可以放到全局配置里
-      return
-    default:
-      // 业务中还会有一些特殊 code 逻辑，我们可以在这里做统一处理，也可以下方它们到业务层
-      // !responseObj.config.noShowDefaultError && GLOBAL.$center.$emit('global.$dialog.show', resData.msg)
-      return Promise.reject(resData)
-  }
-}
-
-export function responseFailFunc (responseError) {
-  // 响应失败，可根据 responseError.message 和 responseError.response.status 来做监控处理
-  // ...
-  return Promise.reject(responseError)
-}
+export default AxiosInit

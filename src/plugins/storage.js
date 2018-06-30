@@ -1,4 +1,4 @@
-var _ = require('lodash')
+// var _ = require('lodash')
 
 /**
  * [nameKey 命名空间]
@@ -37,7 +37,7 @@ function _set (key, value) {
  * @param  {[Object]}   keys [内存中的 key]
  */
 function _remove (keys) {
-  if (_.isArray(keys)) {
+  if (Array.isArray(keys)) {
     keys.map(function (item) {
       sessionStorage.removeItem(nameKey + item)
     })
@@ -53,9 +53,37 @@ function _clear () {
   sessionStorage.clear()
 }
 
-module.exports = {
-  get: _get,
-  set: _set,
-  clear: _clear,
-  remove: _remove
+// cookie
+function _setCookie (name, value) {
+  const Days = 0.5
+  const exp = new Date()
+  exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000)
+  document.cookie = name + '=' + escape(value) + ';expires=' + exp.toGMTString()
+}
+function _getCookie (name) {
+  const reg = new RegExp('(^| )' + name + '=([^;]*)(;|$)')
+  const arr = document.cookie.match(reg)
+  if (arr) {
+    return unescape(arr[2])
+  } else {
+    return null
+  }
+}
+function _delCookie (name) {
+  const exp = new Date()
+  exp.setTime(exp.getTime() - 1)
+  const cval = _getCookie(name)
+  if (cval != null) {
+    document.cookie = name + '=' + cval + ';expires=' + exp.toGMTString()
+  }
+}
+
+export default {
+  getSessionStorage: _get,
+  setSessionStorage: _set,
+  clearSessionStorage: _clear,
+  removeSessionStorage: _remove,
+  setCookie: _setCookie,
+  getCookie: _getCookie,
+  delCookie: _delCookie
 }

@@ -7,7 +7,6 @@ import router from '@/plugins/router'
 import inject from '@/plugins/inject'
 import store from '@/plugins/store'
 import { VuxPlugin } from '@/plugins/vux'
-
 // 依赖注入
 Vue.use(inject)
 // 引入UI库/样式
@@ -20,3 +19,13 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+const vm = new Vue({
+  el: '#app',
+  router,
+  store,
+  components: { App },
+  template: '<App/>'
+})
+window.vm = vm
+
+Vue.use({ vm })
