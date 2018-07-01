@@ -12,6 +12,7 @@
       </keep-alive>
     </transition>
 
+    <Toast></Toast>
   </div>
 </template>
 

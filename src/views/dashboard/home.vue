@@ -1,7 +1,7 @@
 <template >
   <view-box id="home">
     首页
-    <div class="goto" @click="$router.push('/HelloWorld')">去世界</div>
+    <div class="goto" @click="$router.push('/showPage')">去世界</div>
   </view-box>
 </template>
 <script>

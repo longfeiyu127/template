@@ -3,6 +3,7 @@
 // import consts from './const'
 import storage from './storage'
 import axiosInterceptors from '../config/interceptors/axios'
+import http from '../service/api/index'
 
 export default {
   install: (Vue, options) => {
@@ -13,6 +14,7 @@ export default {
     // Vue.prototype.$api = api
     // Vue.prototype.$ajax = axios
     // Vue.prototype.$const = consts
+    Vue.prototype.$http = http
     Vue.prototype.$storage = storage
     // 处理一些问题
     Vue.config.productionTip = false

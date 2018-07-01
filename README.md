@@ -31,8 +31,10 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 ## Config
 
+```
 UI框架 -- VUX
 数据管理 -- vuex
 路由管理 -- vue-router
 数据请求/拦截器 -- axios
 适配方案 -- rem布局
+```

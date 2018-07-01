@@ -1,4 +1,5 @@
 import axios from 'axios'
+import storage from '../../plugins/storage'
 function AxiosInit () {
   // 全局loding
   axios.interceptors.request.use((config) => {
@@ -10,10 +11,14 @@ function AxiosInit () {
   })
   // 响应拦截器
   axios.interceptors.response.use((response) => {
+    if (response.data.resCode === 0 && response.headers['x-session-id']) {
+      // 拦截X-session-ID
+      storage.setSessionStorage('X-Session-Id', response.headers['x-session-id'])
+    }
     if (response.data.resCode === 401) {
-      window.vm.storage.setSessionStorage('Authorization', '')
-      window.vm.storage.setCookie('userName', '')
-      window.vm.storage.setCookie('userData', '')
+      storage.setSessionStorage('Authorization', '')
+      storage.setCookie('userName', '')
+      storage.setCookie('userData', '')
       // if (!window.vm.AthenaJs.isAthena()) {
       if (!window.vm.AthenaJs) {
         window.GLOBAL.vm.router.replace({

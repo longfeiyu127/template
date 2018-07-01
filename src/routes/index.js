@@ -40,10 +40,10 @@ export default [
     ]
   },
   {
-    name: 'HelloWorld',
-    path: '/HelloWorld',
-    component: resolve => require(['@/components/HelloWorld'], resolve),
-    title: 'HelloWorld',
+    name: 'showPage',
+    path: '/showPage',
+    component: resolve => require(['../views/demo/showPage'], resolve),
+    title: 'showTime',
     meta: {
       isKeepAlive: true
     }

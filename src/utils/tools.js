@@ -1,5 +1,5 @@
 export function getNumb () {
-  let num = new Array()
+  let num = []
   for (let i = 0; i < 10; i++) {
     let val = Math.ceil(Math.random() * 30)
     let isEqu = false

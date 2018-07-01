@@ -1,20 +1,14 @@
-export default [{
-  name: 'info',
-  method: 'GET',
-  desc: '测试接口1',
-  path: '/api/info',
-  mockPath: '/api/info',
-  params: {
-    a: 1,
-    b: 2
-  }
-}, {
-  name: 'test',
-  method: 'GET',
-  desc: '用户信息',
-  path: '/api/info',
-  mockPath: '/api/info',
-  params: {
+import ajax from '../../utils/axiosHttp'
 
+function login (data) {
+  let options = {
+    method: 'POST',
+    contentType: 'json',
+    data
   }
-}]
+  return ajax('/ols/app/login', options)
+}
+
+export default {
+  login
+}

@@ -1,28 +1,18 @@
-// var _ = require('lodash')
+// let _ = require('lodash')
 
 /**
  * [nameKey 命名空间]
  * @type {String}
  */
-var nameKey = 'rhol-'
+let nameKey = 'rhol-'
 
-/**
- * [_get 获取 localstroage 值]
- * @param  {[String]}   key [key 值]
- * @return {[All]}       [value 值]
- */
 function _get (key) {
-  var data = JSON.parse(sessionStorage.getItem(nameKey + key))
+  let data = JSON.parse(sessionStorage.getItem(nameKey + key))
   return data && data.data
 }
 
-/**
- * [_set 存储 localstroage 值]
- * @param  {[String]}   key   [key 值]
- * @param  {[All]}   value [value 值]
- */
 function _set (key, value) {
-  var data = {
+  let data = {
     data: value
   }
   try {
@@ -32,10 +22,6 @@ function _set (key, value) {
   }
 }
 
-/**
- * [_remove 删除内存中的数据]
- * @param  {[Object]}   keys [内存中的 key]
- */
 function _remove (keys) {
   if (Array.isArray(keys)) {
     keys.map(function (item) {
@@ -46,9 +32,6 @@ function _remove (keys) {
   }
 }
 
-/**
- * [_clear 清除所有的缓存数据]
- */
 function _clear () {
   sessionStorage.clear()
 }
