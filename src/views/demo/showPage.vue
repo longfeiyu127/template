@@ -1,6 +1,8 @@
 <template>
   <view-box>
-    <button @click="sendAjx">发送</button>
+    <button @click="sendAjx">发送</button><br/>
+    <button @click="showSuccess">showSuccess</button><br/>
+    <button @click="$vux.toast.show({text: 'showToast', type: 'text'})">showToast</button>
   </view-box>
 </template>
 
@@ -25,6 +27,12 @@ export default {
       //   let res = await this.$http.user.login(data)
       //   alert(res.resCode)
       // })(sendData)
+    },
+    showSuccess () {
+      this.$vux.toast.show({
+        text: '字数长度小于',
+        type: 'success'
+      })
     }
   }
 }

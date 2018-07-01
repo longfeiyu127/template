@@ -18,6 +18,7 @@ export default {
     Vue.prototype.$storage = storage
     // 处理一些问题
     Vue.config.productionTip = false
+    require('../utils/AndroidInput.js')
     require('@/utils/rem.js')
     require('es6-promise').polyfill()
     // axios拦截器

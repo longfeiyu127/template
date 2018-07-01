@@ -1,7 +1,7 @@
 import router from '@/plugins/router'
 import store from '@/plugins/store'
 import { sync } from 'vuex-router-sync'
-import { ConfigPlugin, AlertPlugin, ToastPlugin, LoadingPlugin, ViewBox, Toast } from 'vux'
+import { ConfigPlugin, AlertPlugin, ToastPlugin, LoadingPlugin, ViewBox } from 'vux'
 import Vue from 'vue'
 
 Vue.component('view-box', ViewBox)
@@ -11,10 +11,9 @@ export function VuxPlugin (Vue) {
   Vue.use(AlertPlugin)
   Vue.use(LoadingPlugin)
   Vue.use(ViewBox)
-  Vue.use(ToastPlugin, {position: 'bottom'})
+  Vue.use(ToastPlugin, {time: 1500})
   // 注册全局组件
   Vue.component('view-box', ViewBox)
-  Vue.component('toast', Toast)
 
   // 配置vux页面切换动画
   store.registerModule('vux', {
