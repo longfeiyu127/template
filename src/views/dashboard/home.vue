@@ -25,7 +25,7 @@ export default {
 </script>
 <style lang="less" scoped>
 #home {
-  background: red;
+  background: #fff;
   padding-bottom: 50px;
 }
 </style>
