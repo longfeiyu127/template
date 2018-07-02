@@ -13,7 +13,7 @@ export default {
   name: 'Toast',
   data () {
     return {
-      timeout: 1500
+      time: ''
     }
   },
   computed: {
@@ -23,10 +23,12 @@ export default {
   },
   watch: {
     Toast (val) {
-      this.Toast.type = this.Toast.html.length < 6 && this.Toast.type === 'text' ? 'error' : 'text'
-      setTimeout(() => {
+      if (this.time) {
+        clearTimeout(this.time)
+      }
+      this.time = setTimeout(() => {
         this.Toast.html = ''
-      }, this.timeout)
+      }, this.Toast.timeout)
     }
   },
   created () {

@@ -57,7 +57,8 @@ export default {
       },
       actions: {
         updateToastAction ({commit}, option) {
-          let resOption = { ...option }
+          let resOption = Object.assign({html: '', type: 'text', timeout: '1500'}, option)
+          console.log(resOption)
           resOption.type = resOption.html.length < 6 && resOption.type === 'text' ? 'error' : 'text'
           commit('updateToast', resOption)
         }
