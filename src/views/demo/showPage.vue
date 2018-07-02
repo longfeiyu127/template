@@ -4,15 +4,18 @@
     <XButton action-type='button' @click.native="$Toast({html: '成功的弹窗', type: 'success'})">成功提示</XButton>
     <XButton action-type='button' @click.native="$Toast({html: '失败的弹窗'})">失败提示</XButton>
     <XButton action-type='button' @click.native="sendAjx">发送请求</XButton>
+    <Alert></Alert>
   </view-box>
 </template>
 
 <script>
 import { XButton } from 'vux'
+import Alert from '@/components/common/Alert'
 
 export default {
   components: {
-    XButton
+    XButton,
+    Alert
   },
   data () {
     return {

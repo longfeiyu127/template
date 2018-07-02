@@ -1,7 +1,13 @@
 <template>
-  <div class="alert" v-show="Alert.html">
+  <div class="alert">
     <div class="mask"></div>
-    <div class="dialog"></div>
+    <div class="dialog">
+      <div class="dialog-hd"></div>
+      <div class="dialog-bd"></div>
+      <div class="dialog-ft">
+        <button type="button">确定</button>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -44,16 +50,9 @@ export default {
     background-color: rgba(73,73,73,0.90);
   }
   .dialog{
-    font-size:0.28rem;
-    line-height: 0.28rem;
-    color:#fff;
-    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
   }
-}
-.toast.imgToast {
-  padding: 0.5rem;
-}
-.toast.longText {
-  width: 5.0rem;
 }
 </style>
