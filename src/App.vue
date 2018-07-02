@@ -29,7 +29,6 @@ export default {
     Loading
   },
   created () {
-
   },
   computed: {
     ...mapState({
@@ -37,6 +36,7 @@ export default {
       direction: state => state.vux.direction
     }),
     viewTransition () {
+      console.log(this.$route.path)
       console.log(this.direction)
       if (!this.direction) return ''
       return 'vux-pop-' + (this.direction === 'forward' ? 'in' : 'out')

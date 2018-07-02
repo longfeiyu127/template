@@ -7,7 +7,7 @@ export default [
     path: '/index',
     component: resolve => require(['@/views/index'], resolve),
     meta: {
-      isKeepAlive: true
+      keepAlive: true
     },
     children: [
       {
@@ -16,7 +16,7 @@ export default [
         component: resolve => require(['@/views/dashboard/home'], resolve),
         title: '招商仁和人寿',
         meta: {
-          isKeepAlive: true
+          keepAlive: true
         }
       },
       {
@@ -25,7 +25,7 @@ export default [
         component: resolve => require(['@/views/dashboard/market'], resolve),
         title: '保险商城',
         meta: {
-          isKeepAlive: true
+          keepAlive: true
         }
       },
       {
@@ -34,7 +34,7 @@ export default [
         component: resolve => require(['@/views/dashboard/mine'], resolve),
         title: '个人中心',
         meta: {
-          isKeepAlive: true
+          keepAlive: true
         }
       }
     ]
@@ -45,7 +45,14 @@ export default [
     component: resolve => require(['../views/demo/showPage'], resolve),
     title: 'showTime',
     meta: {
-      isKeepAlive: true
+      keepAlive: true
+    }
+  },
+  {
+    path: '**',
+    redirect: '/index/home',
+    meta: {
+      keepAlive: false
     }
   }
 ]

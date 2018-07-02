@@ -1,17 +1,14 @@
 import router from '@/plugins/router'
 import store from '@/plugins/store'
 import { sync } from 'vuex-router-sync'
-import { ConfigPlugin, AlertPlugin, ToastPlugin, LoadingPlugin, ViewBox } from 'vux'
-import Vue from 'vue'
+import { ConfigPlugin, AlertPlugin, LoadingPlugin, ViewBox } from 'vux'
 
-Vue.component('view-box', ViewBox)
 export function VuxPlugin (Vue) {
-  console.log(123)
   // 注册全局插件
   Vue.use(AlertPlugin)
   Vue.use(LoadingPlugin)
   Vue.use(ViewBox)
-  Vue.use(ToastPlugin, {time: 1500})
+  // Vue.use(ToastPlugin, {time: 1500})
   // 注册全局组件
   Vue.component('view-box', ViewBox)
 
@@ -47,7 +44,6 @@ export function VuxPlugin (Vue) {
 
   const history = window.sessionStorage
   history.clear()
-  // let historyCount = history.getItem('count') * 1 || 0
   window.GLOBAL.historyCount = history.getItem('count') * 1 || 0
   window.GLOBAL.history = history
   history.setItem('/', 0)

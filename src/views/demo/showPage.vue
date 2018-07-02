@@ -2,18 +2,26 @@
   <view-box>
     <button @click="sendAjx">发送</button><br/>
     <button @click="showSuccess">showSuccess</button><br/>
-    <button @click="$vux.toast.show({text: 'showToast', type: 'text'})">showToast</button>
+    <button @click="$Toast({html: '1223'})">showToast</button>
+    <Toast :html.sync='html'></Toast>
   </view-box>
 </template>
 
 <script>
+import Toast from '@/components/common/Toast'
 export default {
+  components: {
+    Toast
+  },
   data () {
     return {
-
+      html: '第一次显示'
     }
   },
   methods: {
+    shangeToast () {
+      this.html = '第二次显示图片撒旦客户可拉斯基大师的空间了哎说多了'
+    },
     sendAjx () {
       let data = {
         accountName: '18911111111',
@@ -29,10 +37,10 @@ export default {
       // })(sendData)
     },
     showSuccess () {
-      this.$vux.toast.show({
-        text: '字数长度小于',
-        type: 'success'
-      })
+      // this.$vux.toast.show({
+      //   text: '字数长度小于',
+      //   type: 'success'
+      // })
     }
   }
 }

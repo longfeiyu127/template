@@ -24,8 +24,6 @@ export function routerBeforeEachFunc (to, from, next) {
   if (/\/http/.test(to.path)) {
     let url = to.path.split('http')[1]
     window.location.href = `http${url}`
-  } else {
-    next()
   }
   next()
 }
