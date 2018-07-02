@@ -2,7 +2,7 @@
   <view-box>
     <button @click="sendAjx">发送</button><br/>
     <button @click="showSuccess">showSuccess</button><br/>
-    <button @click="$Toast({html: '1223'})">showToast</button>
+    <button @click="$Toast({html: '信息错误'})">showToast</button>
     <Toast :html.sync='html'></Toast>
   </view-box>
 </template>

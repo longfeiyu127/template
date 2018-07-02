@@ -23,12 +23,12 @@ export default {
   },
   watch: {
     Toast (val) {
-      if (this.time) {
-        clearTimeout(this.time)
-      }
-      this.time = setTimeout(() => {
-        this.Toast.html = ''
-      }, this.Toast.timeout)
+      // if (this.time) {
+      //   clearTimeout(this.time)
+      // }
+      // this.time = setTimeout(() => {
+      //   this.Toast.html = ''
+      // }, this.Toast.timeout)
     }
   },
   created () {
@@ -49,9 +49,10 @@ export default {
   border-radius: 0.05rem;
   background-color: rgba(73,73,73,0.90);
   padding:0.06rem;
+  // min-width: ;
   .wrap_img{
     img{
-      width:0.34rem;
+      width:0.50rem;
       display: block;
       margin: 0 auto 0.06rem;
     }
