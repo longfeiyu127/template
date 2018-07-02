@@ -23,16 +23,14 @@ export default {
       actions: {
         updateToastAction ({commit}, option) {
           let resOption = Object.assign({html: '', type: 'text', timeout: '1500'}, option)
-          console.log(resOption)
-          resOption.type = resOption.html.length < 6 && resOption.type === 'text' ? 'error' : 'text'
+          resOption.type = (resOption.html.length < 6 && resOption.type === 'text') ? 'error' : resOption.type
           commit('updateToast', resOption)
         }
       }
     })
-    // 原型上绑定方法
-    function updastor (params) {
+    function showToast (params) {
       store.dispatch('updateToastAction', params)
     }
-    Vue.prototype.$Toast = updastor
+    Vue.prototype.$Toast = showToast
   }
 }

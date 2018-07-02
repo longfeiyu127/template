@@ -1,50 +1,39 @@
 <template>
-  <view-box>
-    <button @click="sendAjx">发送</button><br/>
-    <button @click="showSuccess">showSuccess</button><br/>
-    <button @click="$Toast({html: '信息错误'})">showToast</button>
-    <Toast :html.sync='html'></Toast>
+  <view-box class="showPage">
+    <XButton action-type='button' @click.native="$Toast({html: '您当前不是用户，无法使用此功能'})">长文字弹框</XButton>
+    <XButton action-type='button' @click.native="$Toast({html: '成功的弹窗', type: 'success'})">成功提示</XButton>
+    <XButton action-type='button' @click.native="$Toast({html: '失败的弹窗'})">失败提示</XButton>
+    <XButton action-type='button' @click.native="sendAjx">发送请求</XButton>
   </view-box>
 </template>
 
 <script>
-import Toast from '@/components/common/Toast'
+import { XButton } from 'vux'
+
 export default {
   components: {
-    Toast
+    XButton
   },
   data () {
     return {
-      html: '第一次显示'
     }
   },
   methods: {
-    shangeToast () {
-      this.html = '第二次显示图片撒旦客户可拉斯基大师的空间了哎说多了'
-    },
     sendAjx () {
       let data = {
         accountName: '18911111111',
         password: 'fLy19940517'
       }
       this.$http.user.login(data).then(res => {
-        console.log(res)
-        alert(res.resCode)
+        this.$Toast({html: res.resMsg})
       })
-      // (async function (data) {
-      //   let res = await this.$http.user.login(data)
-      //   alert(res.resCode)
-      // })(sendData)
-    },
-    showSuccess () {
-      // this.$vux.toast.show({
-      //   text: '字数长度小于',
-      //   type: 'success'
-      // })
     }
   }
 }
 </script>
 
 <style lang="less" scoped>
+.showPage{
+  padding: 0.3rem;
+}
 </style>

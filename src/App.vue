@@ -12,6 +12,7 @@
       </keep-alive>
     </transition>
 
+    <Toast></Toast>
   </div>
 </template>
 
@@ -55,5 +56,7 @@ export default {
   width: 100%;
   overflow-x: hidden;
   position: relative;
+  max-width: 750px;
+  margin: 0 auto;
 }
 </style>

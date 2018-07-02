@@ -1,16 +1,13 @@
 <template>
-  <div class="toast" :class="{'imgToast': Toast.type != 'text', 'longText': Toast.html.length > 11}" v-show="Toast.html">
-    <div class="wrap_img">
-      <img v-if="Toast.type == 'error'" src="../../assets/images/toast/warn_empty.png">
-      <img v-if="Toast.type == 'success'" src="../../assets/images/toast/ok_empty.png">
-    </div>
-    <div class="msg" v-html="Toast.html"></div>
+  <div class="alert" v-show="Alert.html">
+    <div class="mask"></div>
+    <div class="dialog"></div>
   </div>
 </template>
 <script>
 import { mapState } from 'vuex'
 export default {
-  name: 'Toast',
+  name: 'Alert',
   data () {
     return {
       time: ''
@@ -34,23 +31,19 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-.toast{
+.alert{
   position: absolute;
-  top: 36%;
-  left: 50%;
-  transform: translate(-50%,-50%);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   z-index: 100;
-  border-radius: 0.1rem;
-  background-color: rgba(73,73,73,0.90);
-  padding:0.2rem 0.25rem;
-  .wrap_img{
-    img{
-      width:0.68rem;
-      display: block;
-      margin: 0 auto 0.3rem;
-    }
+  .mask{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(73,73,73,0.90);
   }
-  .msg{
+  .dialog{
     font-size:0.28rem;
     line-height: 0.28rem;
     color:#fff;
