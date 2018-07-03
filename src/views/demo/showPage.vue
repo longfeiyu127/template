@@ -4,7 +4,10 @@
     <XButton action-type='button' @click.native="$Toast({html: '成功的弹窗', type: 'success'})">成功提示</XButton>
     <XButton action-type='button' @click.native="$Toast({html: '失败的弹窗'})">失败提示</XButton>
     <XButton action-type='button' @click.native="sendAjx">发送请求</XButton>
-    <Alert></Alert>
+    <XButton action-type='button' @click.native="showAlert">alert</XButton>
+    <XButton action-type='button' @click.native="showConfirm">confirm</XButton>
+    <XButton action-type='button' @click.native="showLoading">loading</XButton>
+    <!-- <Alert></Alert> -->
   </view-box>
 </template>
 
@@ -23,12 +26,44 @@ export default {
   },
   methods: {
     sendAjx () {
+      // document.querySelectorAll('.vux-alert .weui-dialog__hd')
       let data = {
         accountName: '18911111111',
         password: 'fLy19940517'
       }
       this.$http.user.login(data).then(res => {
         this.$Toast({html: res.resMsg})
+      })
+    },
+    showAlert () {
+      this.$alert({
+        // title: '加挂成功！',
+        content: '您现在可以查询本报单的详细信息，以及做保全变更。如您还需要查询或变更其他保单信息，请继续操作加挂保单。',
+        onShow () {
+          console.log('Plugin: I\'m showing')
+        },
+        onHide () {
+          console.log('Plugin: I\'m hiding')
+        }
+      })
+    },
+    showLoading () {
+      this.$vux.loading.show()
+      setTimeout(() => {
+        this.$vux.loading.hide()
+      }, 1500)
+    },
+    showConfirm () {
+      let _this = this
+      this.$vux.confirm.show({
+        // 组件除show外的属性
+        onCancel () {
+          console.log('取消') // 非当前 vm
+        },
+        onConfirm () {
+          console.log(this) // 非当前 vm
+          console.log(_this) // 当前 vm
+        }
       })
     }
   }

@@ -3,10 +3,10 @@ import storage from '../../plugins/storage'
 function AxiosInit () {
   // 全局loding
   axios.interceptors.request.use((config) => {
-    // loading.start()
+    window.GLOBAL.loadingStart()
     return config
   }, (error) => {
-    // loading.end()
+    window.GLOBAL.loadingEnd()
     return Promise.reject(error)
   })
   // 响应拦截器
@@ -31,10 +31,10 @@ function AxiosInit () {
         // AthenaJs.login('true')
       }
     }
-    // loading.end()
+    window.GLOBAL.loadingEnd()
     return response
   }, (err) => {
-    // loading.end()
+    window.GLOBAL.loadingEnd()
     if (err && err.response) {
       switch (err.response.status) {
         case 400:
