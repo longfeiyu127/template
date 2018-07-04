@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div v-transfer-dom>
-      <loading v-model="isLoading" text="正在加载"></loading>
+      <loading v-model="isLoading"></loading>
     </div>
 
     <transition
@@ -37,8 +37,6 @@ export default {
       direction: state => state.vux.direction
     }),
     viewTransition () {
-      console.log(this.$route.path)
-      console.log(this.direction)
       if (!this.direction) return ''
       return 'vux-pop-' + (this.direction === 'forward' ? 'in' : 'out')
     }
@@ -58,5 +56,10 @@ export default {
   position: relative;
   max-width: 750px;
   margin: 0 auto;
+}
+.router-view {
+  width: 100%;
+  height: 100%;
+  background: #fff;
 }
 </style>

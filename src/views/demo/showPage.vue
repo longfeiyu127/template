@@ -1,4 +1,5 @@
 <template>
+<div>
   <HeaderView>
     <div class="showPage">
       <XButton action-type='button' @click.native="$Toast({html: '您当前不是用户，无法使用此功能'})">长文字弹框</XButton>
@@ -8,8 +9,19 @@
       <XButton action-type='button' @click.native="showAlert">alert</XButton>
       <XButton action-type='button' @click.native="showConfirm">confirm</XButton>
       <XButton action-type='button' @click.native="showLoading">loading</XButton>
+      <XButton action-type='button' @click.native="$router.push('/showPage2')">goto showPage2</XButton>
     </div>
   </HeaderView>
+</div>
+  <!-- <div class="showPage">
+    <XButton action-type='button' @click.native="$Toast({html: '您当前不是用户，无法使用此功能'})">长文字弹框</XButton>
+    <XButton action-type='button' @click.native="$Toast({html: '成功的弹窗', type: 'success'})">成功提示</XButton>
+    <XButton action-type='button' @click.native="$Toast({html: '失败的弹窗'})">失败提示</XButton>
+    <XButton action-type='button' @click.native="sendAjx">发送请求</XButton>
+    <XButton action-type='button' @click.native="showAlert">alert</XButton>
+    <XButton action-type='button' @click.native="showConfirm">confirm</XButton>
+    <XButton action-type='button' @click.native="showLoading">loading</XButton>
+  </div> -->
   <!-- <view-box class="showPage">
 
   </view-box> -->
@@ -83,5 +95,7 @@ export default {
 <style lang="less" scoped>
 .showPage{
   padding: 0.3rem;
+  position: relative;
+  z-index: 2;
 }
 </style>

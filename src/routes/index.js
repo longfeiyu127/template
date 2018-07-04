@@ -14,8 +14,8 @@ export default [
         name: 'home',
         path: 'home',
         component: resolve => require(['@/views/dashboard/home'], resolve),
-        title: '招商仁和人寿',
         meta: {
+          title: '招商仁和人寿',
           keepAlive: true
         }
       },
@@ -23,8 +23,8 @@ export default [
         name: 'market',
         path: 'market',
         component: resolve => require(['@/views/dashboard/market'], resolve),
-        title: '保险商城',
         meta: {
+          title: '保险商城',
           keepAlive: true
         }
       },
@@ -32,8 +32,8 @@ export default [
         name: 'mine',
         path: 'mine',
         component: resolve => require(['@/views/dashboard/mine'], resolve),
-        title: '个人中心',
         meta: {
+          title: '个人中心',
           keepAlive: true
         }
       }
@@ -43,8 +43,26 @@ export default [
     name: 'showPage',
     path: '/showPage',
     component: resolve => require(['../views/demo/showPage'], resolve),
-    title: 'showTime',
     meta: {
+      title: '展示页面1',
+      keepAlive: true
+    }
+  },
+  {
+    name: 'showPage2',
+    path: '/showPage2',
+    component: resolve => require(['../views/demo/showPage2'], resolve),
+    meta: {
+      title: '展示页面2',
+      keepAlive: true
+    }
+  },
+  {
+    name: 'showPage3',
+    path: '/showPage3',
+    component: resolve => require(['../views/demo/showPage3'], resolve),
+    meta: {
+      title: '展示页面3',
       keepAlive: true
     }
   },

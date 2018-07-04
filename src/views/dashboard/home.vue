@@ -1,19 +1,19 @@
 <template >
+<div>
   <view-box id="home">
     <h2>首页</h2>
-    <!-- <div class="goto" @click="$router.push('/showPage')">去世界</div> -->
     <XButton class="goto" action-type='button' @click.native="$router.push('/showPage')">去看看外面的世界</XButton>
+    <XButton class="goto" action-type='button' @click.native="$router.push('/showPage2')">去看看外面的世界2</XButton>
   </view-box>
+</div>
 </template>
 <script>
 // import { mapGetters } from 'vuex'
-import Tabs from '@/components/Tabs.vue'
 import { XButton } from 'vux'
 
 export default {
   name: 'home',
   components: {
-    Tabs,
     XButton
   },
   computed: {
@@ -28,6 +28,10 @@ export default {
 }
 </script>
 <style lang="less" scoped>
+.page{
+  height: 100%;
+  width: 100%;
+}
 #home {
   background: #fff;
   padding-bottom: 50px;
@@ -36,8 +40,6 @@ export default {
 }
 h2 {
   text-align: center;
-}
-.goto {
-  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 </style>

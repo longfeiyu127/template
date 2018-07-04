@@ -8,12 +8,15 @@ import inject from '@/plugins/inject'
 import store from '@/plugins/store'
 import { VuxPlugin } from '@/plugins/vux'
 import customltemPlugin from '@/plugins/customltem'
+import userAgent from '@/plugins/userAgent'
 // 依赖注入
 Vue.use(inject)
 // 引入UI库/样式
 Vue.use(VuxPlugin)
 // 引入自定义组件
 Vue.use(customltemPlugin)
+Vue.use(userAgent)
+
 /* eslint-disable no-new */
 const vm = new Vue({
   el: '#app',

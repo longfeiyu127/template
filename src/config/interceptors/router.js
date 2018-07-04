@@ -25,6 +25,12 @@ export function routerBeforeEachFunc (to, from, next) {
     let url = to.path.split('http')[1]
     window.location.href = `http${url}`
   }
+  // 关闭弹框等组件
+  // 设置标题
+  if (to.meta.title) {
+    document.title = to.meta.title
+    window.GLOBAL.setTitle(to.meta.title)
+  }
   next()
 }
 

@@ -1,8 +1,10 @@
 <template>
+<div>
   <view-box id="market">
     <p>保险商城</p>
     <p>保险商城</p>
   </view-box>
+</div>
 </template>
 <script>
 
@@ -14,11 +16,9 @@ export default {
 </script>
 <style lang="less" scoped>
 #market{
-  background: green;
   padding-bottom: 50px;
   p{
     font-size: 16px;
-    color: white;
   }
 }
 </style>

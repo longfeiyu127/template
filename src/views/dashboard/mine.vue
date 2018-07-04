@@ -1,7 +1,9 @@
 <template>
+<div>
   <view-box id="mine">
     <p>用户中心</p>
   </view-box>
+</div>
 </template>
 <script>
 
