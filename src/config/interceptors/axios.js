@@ -73,7 +73,7 @@ function AxiosInit () {
         default:
       }
     }
-    // loading.timeout(err.message)
+    window.GLOBAL.alert({html: err.message})
     return Promise.reject(err)
   })
 }

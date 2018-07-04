@@ -36,9 +36,9 @@
 // ---分割线---
 // ---重置组件样式---
 // toast
-.vux-alert{
-  .vux-x-dialog{
-    .weui-dialog{
+.vux-alert, .vux-confirm {
+  .vux-x-dialog {
+    .weui-dialog {
       background: #fff;
       width: 6.2rem;
       box-sizing: border-box;
@@ -55,17 +55,27 @@
           text-align: center;
         }
       }
-      .weui-dialog__bd{
+      .weui-dialog__bd {
         padding: 0.4rem 0.25rem 0.6rem;
+        min-height: 0;
         div {
           text-align: center;
           font-size: 0.28rem;
           color: #333333;
+          line-height: 0.34rem;
+        }
+        .single {
+          font-family: 'PingFangSC-Semibold';
+          font-weight: 600;
+          font-size: 0.34rem;
+          color: #333333;
+          text-align: center;
+          line-height: 0.34rem;
         }
       }
-      .weui-dialog__ft{
+      .weui-dialog__ft {
         display: block;
-        .weui-dialog__btn.weui-dialog__btn_primary{
+        .weui-dialog__btn.weui-dialog__btn_primary {
           border-radius: 0.06rem;
           border: none;
           font-family: PingFangSC-Regular;
@@ -98,6 +108,36 @@
       background-size: cover;
       animation:loading 5s infinite;
       -webkit-animation:loading 5s infinite; /* Safari 和 Chrome */
+    }
+  }
+}
+// confirm
+.vux-confirm {
+  .vux-x-dialog {
+    .weui-dialog{
+      .weui-dialog__ft{
+        display: flex;
+        padding: 0 0.3rem;
+        box-sizing: border-box;
+        .weui-dialog__btn {
+          border-radius: 0.06rem;
+          border: none;
+          font-family: PingFangSC-Regular;
+          font-size: 0.32rem;
+          // width: 2rem;
+          height: 0.76rem;
+          line-height: 0.74rem;
+          display: block;
+          margin: 0 auto;
+          box-sizing: border-box;
+          background: #fff;
+          border: 1px solid #DDDDDD;
+          color: #666666;
+        }
+        .weui-dialog__btn.weui-dialog__btn_primary {
+          margin-left: 0.3rem;
+        }
+      }
     }
   }
 }

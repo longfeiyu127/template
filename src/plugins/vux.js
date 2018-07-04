@@ -14,11 +14,38 @@ export function VuxPlugin (Vue) {
   Vue.component('view-box', ViewBox)
   // 初始化全局toast
   Vue.prototype.$alert = function (attribute) {
-    let attr = Object.assign(attribute)
-    let TilleDom = document.querySelectorAll('.vux-alert .weui-dialog__hd')[0]
-    // 有无标题
-    attr.title ? nativeFn.removeClass(TilleDom, 'hideDom') : nativeFn.addClass(TilleDom, 'hideDom')
-    Vue.$vux.alert.show(attr)
+    if (!attribute.btn || attribute.btn === 1) {
+      let attr = Object.assign(attribute)
+      let TilleDom = document.querySelector('.vux-alert .weui-dialog__hd')
+      // 有无标题
+      attr.title ? nativeFn.removeClass(TilleDom, 'hideDom') : nativeFn.addClass(TilleDom, 'hideDom')
+      // 多行文字
+      let ContentDom = document.querySelector('.vux-alert .weui-dialog__bd div')
+      if (attribute.content.length > 16) {
+        nativeFn.removeClass(ContentDom, 'single')
+        if (attribute.content.length < 25) {
+          let contentArr = attribute.content.split('')
+          contentArr.splice(15, 0, '<br/>')
+          attribute.content = contentArr.join('')
+        }
+      }
+      attribute.content.length > 16 ? nativeFn.removeClass(ContentDom, 'single') : nativeFn.addClass(ContentDom, 'single')
+      Vue.$vux.alert.show(attr)
+    } else if (attribute.btn === 2) {
+      let attr = Object.assign(attribute)
+      // 多行文字
+      let ContentDom = document.querySelector('.vux-confirm .weui-dialog__bd div')
+      if (attribute.content.length > 16) {
+        nativeFn.removeClass(ContentDom, 'single')
+        if (attribute.content.length < 25) {
+          let contentArr = attribute.content.split('')
+          contentArr.splice(15, 0, '<br/>')
+          attribute.content = contentArr.join('')
+        }
+      }
+      attribute.content.length > 16 ? nativeFn.removeClass(ContentDom, 'single') : nativeFn.addClass(ContentDom, 'single')
+      Vue.$vux.confirm.show(attr)
+    }
   }
 
   // 挂在全局loading

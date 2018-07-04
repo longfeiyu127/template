@@ -32,5 +32,6 @@ export default {
       store.dispatch('updateToastAction', params)
     }
     Vue.prototype.$Toast = showToast
+    window.GLOBAL.alert = showToast
   }
 }
